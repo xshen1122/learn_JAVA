@@ -60,7 +60,10 @@ public class Test01 {
 //		
 		//µ÷ÓÃFraction
 		Fraction fc = new Fraction(1,3);
+		Fraction fc1 = new Fraction(1,4);
 		fc.print();
+		fc1.print();
+		(fc.add(fc1)).print();
 
 		
 	}
