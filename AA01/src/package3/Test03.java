@@ -114,6 +114,24 @@ public class Test03 {
 		//调用YH三角形
 		YH yh1 = new YH(10);
 		yh1.show();
+		
+		//调用冒泡排序法
+		int[] mytest = {2,34,5,69,37,86,92,53};
+		Bubble bb = new Bubble(mytest);
+		bb.sort();
+		System.out.println(Arrays.toString(mytest));
+		System.out.println("After bubble sorting==============");
+		System.out.println(Arrays.toString(bb.test));
+		System.out.println("After Arrays sorting==============");
+		Arrays.sort(mytest);
+		System.out.println(Arrays.toString(mytest));
+		
+		//调用哈诺塔
+		Hanio hn = new Hanio();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请输入哈诺塔的层数");
+		int ta = sc.nextInt();
+		System.out.println("需要移动的步数为：" + hn.process(ta));
 	}
 }
 
