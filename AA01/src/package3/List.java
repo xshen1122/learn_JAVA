@@ -17,7 +17,7 @@ public class List {
 		Length = 0;
 		
 	}
-	//复位，使第一个节点为当前节点,为啥Pointer=null，就是复位？
+	//复位，使第一个节点为当前节点,为啥Pointer=null，就是复位？说明之前没有节点。
 	public void reset(){
 		Pointer = null;
 	}

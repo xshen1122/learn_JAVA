@@ -134,7 +134,7 @@ public class Test03 {
 //		System.out.println("需要移动的步数为：" + hn.process(ta));
 		
 		//调用List
-		List list = new List();
+		/*List list = new List();
 		Node node1 = new Node("15");
 		Node node2 = new Node("14");
 		Node node3 = new Node("13");
@@ -151,7 +151,16 @@ public class Test03 {
 		list.remove();//将当前结点去掉，只剩下13,14,15才对。把15给删掉了。
 		System.out.println(list.currentNode());
 		for (int i =0;i<2;i++)
-		{System.out.println(list.nextNode());}
+		{System.out.println(list.nextNode());}*/
+		
+		//调用Stack
+		Stack stack = new Stack();
+		stack.push("15");
+		stack.push("16");
+		stack.push("17");
+		System.out.println("获取顶部数据" + stack.top());
+		stack.pop();
+		System.out.println("获取顶部数据" + stack.top());
 	}
 }
 
