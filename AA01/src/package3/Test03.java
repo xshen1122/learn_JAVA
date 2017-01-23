@@ -1,6 +1,7 @@
 package package3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -11,6 +12,7 @@ import java.lang.Math;
 import package01.Fraction;
 
 public class Test03 {
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -44,6 +46,7 @@ public class Test03 {
 //		for (Object item:mySet){
 //			System.out.println(item.toString());
 //		}
+
 //		
 		
 		//练习题，将int，String互相转换
@@ -97,6 +100,20 @@ public class Test03 {
 		//练习题，指数，对数，平方根，三角函数
 		int number = Math.abs(-5);
 		double n1 = Math.sqrt(11.23);
+
+		
+		//练习题，用Math来计算sqrt，abs等
+		int abs_value = Math.abs(-5);
+		double sqrt_value = Math.sqrt(11.73);
+		
+		
+		//练习题，使用getClass方法
+		Test03 t3 = new Test03();
+		System.out.println("Class is " + t3.getClass().getName());
+		
+		//调用YH三角形
+		YH yh1 = new YH(10);
+		yh1.show();
 	}
 }
 
