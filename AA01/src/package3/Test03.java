@@ -108,30 +108,50 @@ public class Test03 {
 		
 		
 		//练习题，使用getClass方法
-		Test03 t3 = new Test03();
-		System.out.println("Class is " + t3.getClass().getName());
+//		Test03 t3 = new Test03();
+//		System.out.println("Class is " + t3.getClass().getName());
 		
 		//调用YH三角形
-		YH yh1 = new YH(10);
-		yh1.show();
+//		YH yh1 = new YH(10);
+//		yh1.show();
 		
 		//调用冒泡排序法
-		int[] mytest = {2,34,5,69,37,86,92,53};
-		Bubble bb = new Bubble(mytest);
-		bb.sort();
-		System.out.println(Arrays.toString(mytest));
-		System.out.println("After bubble sorting==============");
-		System.out.println(Arrays.toString(bb.test));
-		System.out.println("After Arrays sorting==============");
-		Arrays.sort(mytest);
-		System.out.println(Arrays.toString(mytest));
+//		int[] mytest = {2,34,5,69,37,86,92,53};
+//		Bubble bb = new Bubble(mytest);
+//		bb.sort();
+//		System.out.println(Arrays.toString(mytest));
+//		System.out.println("After bubble sorting==============");
+//		System.out.println(Arrays.toString(bb.test));
+//		System.out.println("After Arrays sorting==============");
+//		Arrays.sort(mytest);
+//		System.out.println(Arrays.toString(mytest));
 		
 		//调用哈诺塔
-		Hanio hn = new Hanio();
-		Scanner sc = new Scanner(System.in);
-		System.out.println("请输入哈诺塔的层数");
-		int ta = sc.nextInt();
-		System.out.println("需要移动的步数为：" + hn.process(ta));
+//		Hanio hn = new Hanio();
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("请输入哈诺塔的层数");
+//		int ta = sc.nextInt();
+//		System.out.println("需要移动的步数为：" + hn.process(ta));
+		
+		//调用List
+		List list = new List();
+		Node node1 = new Node("15");
+		Node node2 = new Node("14");
+		Node node3 = new Node("13");
+		Node node4 = new Node("12");
+		list.insert(node1.data);
+		list.insert(node2.data);
+		list.insert(node3.data);
+		list.insert(node4.data);
+		list.reset();//对的，是往当前元素之前插入，所以第一个是15，15之前是14,14之前是13，第一个是12。
+		System.out.println(list.currentNode());
+		for (int i =0;i<3;i++)
+		{System.out.println(list.nextNode());}
+		System.out.println("当前结点为:" + list.currentNode());
+		list.remove();//将当前结点去掉，只剩下13,14,15才对。把15给删掉了。
+		System.out.println(list.currentNode());
+		for (int i =0;i<2;i++)
+		{System.out.println(list.nextNode());}
 	}
 }
 
