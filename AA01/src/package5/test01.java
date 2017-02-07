@@ -8,9 +8,76 @@ import java.util.Vector;
 
 import javax.swing.text.html.HTMLDocument.Iterator;
 
-public class test01 {
+public class test01 extends Thread  {
+	public void run(){
+		for (int i = 0;i <5;i++)
+			compute();
+	}
+//为啥没有5个Thread？
+
+	static void compute(){
+		ThreadLocal numcalls = new ThreadLocal();
+		
+		Integer n = (Integer)numcalls.get();
+		if (n==null)
+			n=new Integer(1);
+		else
+			n = new Integer(n.intValue() + 1);
+		numcalls.set(n);
+		
+		System.out.println(Thread.currentThread().getName() + ":" + n);
+		
+		for (int i = 0,j=0;i<10000;i++){
+			j += i;
+			try {
+				Thread.sleep((int)(Math.random()*100+1));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		Thread.yield();
+	}
+	
+	
 
 	public static void main(String[] args) {
+		//调用ThreadDemo
+		test01 thread1 = new test01(); //方法1
+		Thread thread2 = new Thread(new Runnable(){ 
+			public void run(){
+				for (int i = 0;i<5;i++)
+					compute();
+			}
+		}
+		);
+		//设置两个线程的属性
+		if(args.length>1)
+			thread1.setPriority(Integer.parseInt(args[0]));
+		if(args.length>2)
+			thread2.setPriority(Integer.parseInt(args[1]));
+		
+		//启动线程
+		thread1.start();
+		thread2.start();
+		
+		for (int i=0;i<5;i++)
+			compute();
+		
+		
+	
+		
+		
+		//调用SimpleThread
+		/*
+		for (int i = 0;i<3;i++){
+			new SimpleThread().start();//开启3个线程
+		}
+		System.out.println("All Threads have been started.");
+		*/
+		
+		
 		// TODO Auto-generated method stub
 		//练习如何使用vector
 		/*
@@ -71,6 +138,7 @@ public class test01 {
 		*/
 		
 		//练习使用ArrayList，类似于Vector
+		/*
 		ArrayList a = new ArrayList();
 		
 		//往里面加元素
@@ -91,10 +159,15 @@ public class test01 {
 		it.remove();
 		System.out.println(a);
 		
+		*/
+		
+		//练习线程
+		
 		
 		
 		
 
 	}
+
 
 }
