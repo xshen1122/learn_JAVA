@@ -1,9 +1,12 @@
 package package5;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.Vector;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class test01 {
 
@@ -38,6 +41,7 @@ public class test01 {
 		
 		
 		//练习使用properties
+		/*
 		test01 ts = new test01();
 		Properties pt = new Properties();
 		
@@ -47,8 +51,12 @@ public class test01 {
 		pt.setProperty("B", "Brazil");
 		pt.setProperty("D", "Dutch");
 		
-		//枚举属性
+		//枚举属性，如果写成Enumeration提示编译错误，要写成Enumeration<?>
 		Enumeration<?> e = pt.propertyNames();
+		
+		
+		
+		
 		//输出所有的key
 		while(e.hasMoreElements()){
 			System.out.println(e.nextElement().toString());
@@ -59,6 +67,33 @@ public class test01 {
 		System.out.println(pt.getProperty("A"));
 		System.out.println(pt.getProperty("B"));
 		System.out.println(pt.getProperty("D"));
+		
+		*/
+		
+		//练习使用ArrayList，类似于Vector
+		ArrayList a = new ArrayList();
+		
+		//往里面加元素
+		a.add("1");
+		a.add("2");
+		a.add("3");
+		a.add("4");
+		//a.add(new Integer(2));
+		
+		System.out.println(a);
+		//ArrayList 的 Iterator属性,不能用？
+		java.util.Iterator it = a.iterator();
+	
+		it.next();
+		it.remove();
+		System.out.println(a);
+		it.next();
+		it.remove();
+		System.out.println(a);
+		
+		
+		
+		
 
 	}
 
