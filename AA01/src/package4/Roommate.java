@@ -9,13 +9,13 @@ public class Roommate {
 		else
 			return null;
 	}
-	//这里是回调方法的关键。让类B方法中引用类A的方法，只限定了学生类
-	public void getAnswer(String homework,Student st){
-		if ("1+1=?".equals(homework))
-			st.doHomework(homework, "2");
-		else
-			st.doHomework(homework, null);
-	}
+	//这里是回调方法的关键。让类B方法中引用类A的方法，只限定了学生类,这里先注释掉
+//	public void getAnswer(String homework,Student st){
+//		if ("1+1=?".equals(homework))
+//			st.doHomework(homework, "2");
+//		else
+//			st.doHomework(homework, null);
+//	}
 	//加入了接口。可以对任何类，只要该类实现了DoHomeWork接口
 	public void getAnswer(String homework,DoHomeWork someone){
 		if ("1+1=?".equals(homework))

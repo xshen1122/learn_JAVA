@@ -34,11 +34,11 @@ public class Student implements DoHomeWork{
 	public void ask(final String homework,final Roommate roommate){
 		new Thread(new Runnable(){
 
-		public void run(){
-		roommate.getAnswer(homework,Student.this);
-		}
-		}).start();
-		goHome();
+			public void run(){
+				roommate.getAnswer(homework,Student.this);//另起一个线程调用getAnswer.
+			}
+			}).start();
+			goHome();
 		}
 	public void goHome()
 	{
