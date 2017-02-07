@@ -1,6 +1,8 @@
 package package5;
 
 import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.Properties;
 import java.util.Vector;
 
 public class test01 {
@@ -8,6 +10,7 @@ public class test01 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//练习如何使用vector
+		/*
 		Vector vt = new Vector();
 		vt.add("1");
 		vt.add("7");
@@ -31,7 +34,31 @@ public class test01 {
 		Arrays.sort(contentNumber);
 		for(int number:contentNumber){
 			System.out.println("Element is" + number);
+		}*/
+		
+		
+		//练习使用properties
+		test01 ts = new test01();
+		Properties pt = new Properties();
+		
+		//设置属性
+		pt.setProperty("C", "China");
+		pt.setProperty("A", "American");
+		pt.setProperty("B", "Brazil");
+		pt.setProperty("D", "Dutch");
+		
+		//枚举属性
+		Enumeration<?> e = pt.propertyNames();
+		//输出所有的key
+		while(e.hasMoreElements()){
+			System.out.println(e.nextElement().toString());
 		}
+		//输出key是没有顺序的。
+		//输出所有的properties
+		System.out.println(pt.getProperty("C"));
+		System.out.println(pt.getProperty("A"));
+		System.out.println(pt.getProperty("B"));
+		System.out.println(pt.getProperty("D"));
 
 	}
 
