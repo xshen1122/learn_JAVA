@@ -20,7 +20,7 @@ public class Test06 {
 //		mywrite();
 //		System.out.println("\nAfter=========================");
 //		myread();
-		myRedirect();
+//		myRedirect();
 
 	}
 	
