@@ -27,7 +27,7 @@ public class test01 extends Thread  {
 		
 		System.out.println(Thread.currentThread().getName() + ":" + n);
 		
-		for (int i = 0,j=0;i<10000;i++){
+		for (int i = 0,j=0;i<100;i++){
 			j += i;
 			try {
 				Thread.sleep((int)(Math.random()*100+1));
