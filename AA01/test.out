@@ -1,0 +1,30 @@
+iOS_1.txt
+修改代码
+不断实验
+观察结果
+
+====第一�?
+iOS项目模板
+新建�?个应用程�?
+界面构�?�器
+Label的属�?
+
+
+====第二�?
+使用Xcode 8.2.1，没有代码补全功能�?�重启后ok
+实现目标，点击Left button,Label显示"Left Button pressed."
+          点击Right button，Label显示“Right Button pressed."
+
+1. 采用界面构�?�器来新建Label，Left Button，Right Button
+2. 在ViewController.h新建
+	@property (strong, nonatomic) IBOutlet UILable *display; <--和Label控件连起�?
+	- (BIAction)click:(id)sender; <-- 分别和Left button和Right Button连起�?
+
+3. 在ViewController.m中实现click方法
+	NSString *title =[sender titleForState:UIControlStateNormal];
+	NSString *plainText = [NSString stringWithFormat:@"%@ button pressed.",title];
+	display.text = plainText;
+
+第一行：获取按钮正常状�?�下的标题（Left或�?�Right�?
+第二行：组装成一个字符串，plainText
+第三行：将其传给display，在Label中显�?
